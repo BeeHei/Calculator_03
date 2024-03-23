@@ -118,7 +118,7 @@
     <Button
         app:layout_constraintLeft_toRightOf="@id/one_button"
         app:layout_constraintBottom_toTopOf="@id/five_button"
-        android:text="5"
+        android:text="8"
         android:id="@+id/eight_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content" />
