@@ -31,7 +31,15 @@ class MainActivity : AppCompatActivity() {
 
         val resultTextView = findViewById<TextView>(R.id.result_textView)
 
-        resultTextView.text = "Blabla"
+        val numberStringBuilder = StringBuilder()
+
+        oneButton.setOnClickListener {
+
+            numberStringBuilder.append(1)
+            resultTextView.text = numberStringBuilder
+
+        }
+
 
     }
 }
