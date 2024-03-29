@@ -94,8 +94,8 @@ class MainActivity : AppCompatActivity() {
             resultTextView.text =numberStringBuilder
         }
         clearButton.setOnClickListener {
-            numberStringBuilder.append("C")
-            resultTextView.text = numberStringBuilder
+            resultTextView.text = "0"
+            numberStringBuilder.clear()
         }
         pointButton.setOnClickListener {
             numberStringBuilder.append(".")
@@ -117,5 +117,5 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+        }
     }
-}
