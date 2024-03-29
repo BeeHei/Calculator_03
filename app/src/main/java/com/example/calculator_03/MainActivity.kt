@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.ezylang.evalex.Expression
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,11 +75,6 @@ class MainActivity : AppCompatActivity() {
             numberStringBuilder.append(9)
             resultTextView.text = numberStringBuilder
         }
-
-        equalButton.setOnClickListener {
-            numberStringBuilder.append("=")
-            resultTextView.text = numberStringBuilder
-        }
         plusButton.setOnClickListener {
             numberStringBuilder.append("+")
             resultTextView.text = numberStringBuilder
@@ -95,7 +91,20 @@ class MainActivity : AppCompatActivity() {
             numberStringBuilder.append(".")
             resultTextView.text = numberStringBuilder
         }
+        equalButton.setOnClickListener {
+            numberStringBuilder.append("=")
+            resultTextView.text = numberStringBuilder
+        }
 
+        equalButton.setOnClickListener {
+            val stringExpression = numberStringBuilder.toString()
+            val expression = Expression(stringExpression)
+            val expressionResult = expression.evaluate().numberValue
+            resultTextView.text = expressionResult.toString()
+
+            numberStringBuilder.clear()
+            numberStringBuilder.append(expressionResult.toString())
+        }
 
     }
 }
