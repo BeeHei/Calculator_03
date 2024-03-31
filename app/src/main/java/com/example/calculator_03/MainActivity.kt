@@ -14,8 +14,9 @@ import com.ezylang.evalex.Expression
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) = with(binding) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
@@ -24,81 +25,81 @@ class MainActivity : AppCompatActivity() {
 
         val numberStringBuilder = StringBuilder()
 
-        binding.zeroButton.setOnClickListener {
+        zeroButton.setOnClickListener {
             numberStringBuilder.append(0)
             resultTextView.text = numberStringBuilder
         }
-        binding.oneButton.setOnClickListener {
+        oneButton.setOnClickListener {
             numberStringBuilder.append(1)
             resultTextView.text = numberStringBuilder
         }
-        binding.twoButton.setOnClickListener {
+        twoButton.setOnClickListener {
             numberStringBuilder.append(2)
             resultTextView.text = numberStringBuilder
         }
-        binding.threeButton.setOnClickListener {
+        threeButton.setOnClickListener {
             numberStringBuilder.append(3)
             resultTextView.text = numberStringBuilder
         }
-        binding.fourButton.setOnClickListener {
+        fourButton.setOnClickListener {
             numberStringBuilder.append(4)
             resultTextView.text = numberStringBuilder
         }
-        binding.fiveButton.setOnClickListener {
+        fiveButton.setOnClickListener {
             numberStringBuilder.append(5)
             resultTextView.text = numberStringBuilder
         }
-        binding.sixButton.setOnClickListener {
+        sixButton.setOnClickListener {
             numberStringBuilder.append(6)
             resultTextView.text = numberStringBuilder
         }
-        binding.sevenButton.setOnClickListener {
+        sevenButton.setOnClickListener {
             numberStringBuilder.append(7)
             resultTextView.text = numberStringBuilder
         }
-        binding.eightButton.setOnClickListener {
+        eightButton.setOnClickListener {
             numberStringBuilder.append(8)
             resultTextView.text = numberStringBuilder
         }
-        binding.nineButton.setOnClickListener {
+        nineButton.setOnClickListener {
             numberStringBuilder.append(9)
             resultTextView.text = numberStringBuilder
         }
-        binding.plusButton.setOnClickListener {
+        plusButton.setOnClickListener {
             numberStringBuilder.append("+")
             resultTextView.text = numberStringBuilder
         }
-        binding.minusButton.setOnClickListener {
+        minusButton.setOnClickListener {
             numberStringBuilder.append("-")
             resultTextView.text = numberStringBuilder
         }
-        binding.multiplyButton.setOnClickListener {
+        multiplyButton.setOnClickListener {
             numberStringBuilder.append("*")
             resultTextView.text = numberStringBuilder
         }
-        binding.divideButton.setOnClickListener {
+        divideButton.setOnClickListener {
             numberStringBuilder.append("/")
             resultTextView.text = numberStringBuilder
         }
-        binding.clearButton.setOnClickListener {
+        clearButton.setOnClickListener {
             resultTextView.text = "0"
             numberStringBuilder.clear()
         }
-        binding.pointButton.setOnClickListener {
+        pointButton.setOnClickListener {
             numberStringBuilder.append(".")
             resultTextView.text = numberStringBuilder
         }
-        binding.equalButton.setOnClickListener {
+        equalButton.setOnClickListener {
             numberStringBuilder.append("=")
             resultTextView.text = numberStringBuilder
         }
-        binding.resetButton.setOnClickListener {
+        resetButton.setOnClickListener {
             val lastIndex = numberStringBuilder.length - 1
             numberStringBuilder.deleteCharAt(lastIndex)
             resultTextView.text = numberStringBuilder
         }
 
-        binding.equalButton.setOnClickListener {
+        equalButton.setOnClickListener {
 
             try {
                 val stringExpression = numberStringBuilder.toString()
