@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val numberStringBuilder = StringBuilder()
+
+    private val historyList = mutableListOf<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -101,8 +103,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         equalButton.setOnClickListener {
+            saveToHistory()
             calculate(resultTextView)
         }
+    }
+
+    private fun saveToHistory(){
+        val stringExpression = numberStringBuilder.toString()
+        historyList.add(stringExpression)
     }
 
     private fun calculate(resultTextView: TextView) {
