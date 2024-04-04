@@ -107,7 +107,10 @@ class MainActivity : AppCompatActivity() {
             calculate(resultTextView)
         }
         historyButton.setOnClickListener {
+
+            val h = historyList
             val intent = Intent(this@MainActivity, HistoryActivity::class.java)
+            intent.putExtra("history_list", historyList.toTypedArray())
             startActivity(intent)
             //open new activity
             //pass it new data - history
